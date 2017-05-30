@@ -47,7 +47,7 @@ public class CoreLoadBalancer implements LoadBalancer {
     @Override
     public Backend route(UserId userId) {
         if (backends.isEmpty()) {
-            throw new NullPointerException("Backends do not exist");
+            throw new RuntimeException("Backends do not exist");
         }
 
         Backend routedBackend = null;
